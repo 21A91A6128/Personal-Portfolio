@@ -13,7 +13,7 @@ contact: {
     instagram: '#',
     facebook: '#'
     },
-    resume: 'https://drive.usercontent.google.com/uc?id=1qCs2Kgq8nQroRzMmfnDObnz0stLp69cj&export=download'
+    resume: 'https://drive.usercontent.google.com/uc?id=1TkjpB7conXCgoVI96DK7S5e0jQE6CBLK&export=download'
 },
 education: [
     {
