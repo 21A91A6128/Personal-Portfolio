@@ -1,0 +1,336 @@
+/* Custom CSS and animations */
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Dark theme for Home section */
+.theme-dark {
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
+.theme-dark .text-gradient {
+    background: linear-gradient(90deg, #58a6ff, #8b949e, #c9d1d9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.theme-dark .hollow-text-vardhan {
+    -webkit-text-stroke: 1px #58a6ff;
+    text-stroke: 1px #58a6ff;
+}
+
+/* Light theme for other sections */
+.theme-light {
+    background-color: #f3f4f6; /* A light gray background */
+    background-image: linear-gradient(135deg, #e0f2fe 0%, #ffffff 50%, #e0f2fe 100%);
+    color: #1f2937; /* Dark text for contrast */
+}
+.theme-light .text-gradient {
+    background: linear-gradient(90deg, #60a5fa, #8b5cf6, #ec4899);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.theme-light .hollow-text-vardhan {
+    -webkit-text-stroke: 1px #1e3a8a;
+    text-stroke: 1px #1e3a8a;
+}
+
+/* Hollow text style for the homepage name */
+.hollow-text-vardhan {
+    font-size: 12rem; /* Adjusted size */
+    font-weight: 900;
+    line-height: 1;
+    color: transparent;
+    letter-spacing: -0.05em;
+}
+
+@media (max-width: 768px) {
+    .hollow-text-vardhan {
+    font-size: 6rem; /* Adjusted mobile size */
+    }
+}
+
+.animate-gradient {
+    background-size: 200% auto;
+    animation: gradient 3s linear infinite;
+}
+@keyframes gradient {
+    0% {
+    background-position: 0% 50%;
+    }
+    50% {
+    background-position: 100% 50%;
+    }
+    100% {
+    background-position: 0% 50%;
+    }
+}
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* Fixed header style */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.header-dark {
+    background-color: rgba(13, 17, 23, 0.9);
+}
+.header-light {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+/* Dark mode search bar styles */
+.theme-dark .search-input {
+    background-color: #21262d;
+    color: #c9d1d9;
+    border-color: #30363d;
+}
+.theme-dark .search-input::placeholder {
+    color: #8b949e;
+}
+.theme-dark .search-button {
+    background-color: #30363d;
+    color: #c9d1d9;
+}
+.theme-dark .search-button:hover {
+    background-color: #444c56;
+}
+
+/* Timeline styles */
+.timeline-container {
+    position: relative;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #38bdf8;
+    border-radius: 2px;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    width: 50%;
+    padding-right: 2rem;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.timeline-item.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+.timeline-item.timeline-right {
+    margin-left: 50%;
+    padding-left: 2rem;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-in-out;
+}
+.timeline-item.timeline-right.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background-color: #0ea5e9;
+    border-radius: 50%;
+    border: 4px solid #f3f4f6;
+}
+.timeline-item.timeline-right::before {
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+    .timeline-container::before {
+        left: 10px;
+        transform: none;
+    }
+    .timeline-item {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 2rem;
+        padding-right: 0;
+        transform: translateY(20px);
+    }
+    .timeline-item.timeline-right {
+        margin-left: 0;
+        padding-right: 0;
+        padding-left: 2rem;
+        transform: translateY(20px);
+    }
+    .timeline-item::before {
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+    .timeline-item.timeline-right::before {
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Hide the default scrollbar */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+/* Track */
+body::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background-color: #94a3b8;
+    border-radius: 4px;
+    border: 2px solid #f1f5f9;
+}
+.text-transparent {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Skills Dashboard Hover Effect */
+.skill-card-item {
+    transition: transform 0.3s ease-in-out;
+}
+.skill-card-item:hover {
+    transform: translateY(-8px);
+}
+.skill-badge {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.skill-badge:hover {
+    background-color: #3b82f6; /* bg-blue-500 */
+    color: #ffffff; /* text-white */
+}
+
+/* Certification Card Image Hover Effect */
+.cert-card:hover {
+    transform: translateY(-8px);
+}
+.image-circle-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+.cert-image {
+    transition: transform 0.3s ease-in-out;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.cert-image:hover {
+    transform: scale(1.1);
+}
+
+/* Achievement Card Hover Effect */
+.achiev-card:hover {
+    transform: translateY(-8px);
+}
+.achiev-image-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+.achiev-logo {
+    transition: transform 0.3s ease-in-out;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.achiev-card:hover .achiev-logo {
+    transform: scale(1.1);
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 900px;
+    max-height: 90vh;
+    width: 90%;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-overlay.show .modal-content {
+    transform: scale(1);
+}
+/* Add a scrollbar to the modal content for long descriptions */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #94a3b8;
+    border-radius: 4px;
+    border: 2px solid #f1f5f9;
+}
+.search-results-bg {
+    background-color: #e0f2fe;
+}
+.search-highlight {
+    background-color: #fff9c4; /* A light yellow highlight */
+    color: #000;
+}
