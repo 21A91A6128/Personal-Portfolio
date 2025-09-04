@@ -129,7 +129,7 @@ projects: [
     title: 'Snake Game Using A* Algorithm',
     description: 'Developed a classic Snake game with an AI-powered player that uses the A* search algorithm to find the optimal path to food. This project highlights a strong understanding of algorithms, AI pathfinding, and game development.',
     link: 'https://github.com/Jay-Ryali-11/Projects/tree/main/Snake%20game%20using%20A*%20algorithm',
-    image: 'assests/photos/Snake Game Using A star Algorithm thumbnail.png',
+    image: 'https://raw.githubusercontent.com/21A91A6128/Snake-Game-Using-A-algorithm/refs/heads/main/outputs/pic.png',
     video: 'https://drive.google.com/file/d/1p0GrMCCcWPnaBdlqRtgKKnh9q9gWqktm/preview',
     category: ['Coding'],
     technologies: ['Java', 'A* Algorithm']
