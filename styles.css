@@ -17,8 +17,8 @@ body {
     -webkit-text-fill-color: transparent;
 }
 .theme-dark .hollow-text-vardhan {
-    -webkit-text-stroke: 1px #58a6ff;
-    text-stroke: 1px #58a6ff;
+    -webkit-text-stroke: 2px #0b76f0 !important;
+    text-stroke: 2px #0b76f0;
 }
 
 /* Light theme for other sections */
@@ -333,4 +333,20 @@ body::-webkit-scrollbar-thumb {
 .search-highlight {
     background-color: #fff9c4; /* A light yellow highlight */
     color: #000;
+}
+
+/* Final Scrollbar Fix */
+body::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #0b76f0 !important;
+    border-radius: 4px !important;
+    border: none !important;
 }
